@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import React, { useState } from 'react'
 
 const Shorten = () => {
@@ -63,9 +64,9 @@ const Shorten = () => {
                 Generate
             </button>
         </div>
-        {generated && <code>
-            {generated}
-            </code>}
+        {generated && <>
+              <span>Your Personal BitLink:</span> <code><Link target="_blank" href={generated}>{generated}</Link>
+              </code></>}
     </div>
   )
 }
